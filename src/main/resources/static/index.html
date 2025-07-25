@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>漢字クイズへようこそ！</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url("./images/top.png");
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #overlay {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+      width: 90%;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    button {
+      font-size: 20px;
+      margin: 10px;
+      padding: 12px 24px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-easy {
+      border: 2px solid #61da4f;
+      background-color: #deffd9;
+      color: #61da4f;
+    }
+    .btn-easy:hover {
+      background-color: #61da4f;
+      color: white;
+    }
+
+    .btn-normal {
+      border: 2px solid #ff8000;
+      background-color: #fff4e6;
+      color: #ff8000;
+    }
+    .btn-normal:hover {
+      background-color: #ff8000;
+      color: white;
+    }
+
+    .btn-hard {
+      border: 2px solid #990000;
+      background-color: #ff8b8b;
+      color: #990000;
+    }
+    .btn-hard:hover {
+      background-color: #990000;
+      color: white;
+    }
+
+    /* ✅ スマホ用拡大調整 */
+    @media (max-width: 600px) {
+      #overlay {
+        width: 95vw !important;
+        max-width: 95vw !important;
+        padding: 48px 24px !important;
+        font-size: 18px !important;
+      }
+
+      h1 {
+        font-size: 32px !important;
+      }
+
+      h2 {
+        font-size: 22px !important;
+      }
+
+      h3 {
+        font-size: 18px !important;
+      }
+
+      button {
+        font-size: 16px !important;
+        padding: 10px 20px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="overlay">
+    <h1>漢字クイズへようこそ！</h1>
+    <h2>難易度を選んでください</h2>
+    <h3>各20問</h3>
+    <button class="btn-easy" onclick="location.href='quiz.html?level=easy'">初級</button>
+    <button class="btn-normal" onclick="location.href='quiz.html?level=normal'">中級</button>
+    <button class="btn-hard" onclick="location.href='quiz.html?level=hard'">上級</button>
+  </div>
+</body>
+</html>

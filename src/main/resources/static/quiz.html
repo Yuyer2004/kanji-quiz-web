@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>漢字クイズゲーム</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url("/images/Classroom.png");
+      background-size: cover;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #container {
+      background: #ffe3e3;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 32px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    #kanji {
+      font-size: 64px;
+      margin-bottom: 20px;
+      font-family: 'Sawarabi Mincho', serif;
+    }
+
+    input {
+      font-size: 18px;
+      padding: 8px;
+      width: 80%;
+    }
+
+    button {
+      font-size: 18px;
+      margin-top: 12px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    #result {
+      margin: 20px 0;
+      font-size: 20px;
+    }
+
+    #meaning {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #777;
+    }
+
+    #stats {
+      margin-top: 16px;
+      font-size: 14px;
+      color: #555;
+    }
+	
+	html, body {
+	  margin: 0;
+	  padding: 0;
+	  height: 100%;
+	  font-family: 'Segoe UI', sans-serif;
+	}
+	
+	@media (max-width: 600px) {
+		  body {
+		    display: block !important;
+		    align-items: unset !important;
+		    justify-content: unset !important;
+		    text-align: center !important;
+		    padding-top: 245px;
+		    height: auto !important;  /* ←これが重要 */
+		  }
+
+		  #container {
+		    margin: 2px auto !important;
+		    width: 70% !important;
+		    max-width: 360px !important;
+		    padding: 24px !important;
+		  }
+		}
+  </style>
+</head>
+<body>
+  <div id="container" class="container">
+    <h1 id="title">漢字クイズ</h1>
+    <div id="kanji">---</div>
+    <input id="answer" type="text" placeholder="ひらがなで入力" />
+    <button onclick="submitAnswer()">送信</button>
+    <div id="result"></div>
+    <div id="meaning"></div>
+    <div id="stats">
+      スコア: <span id="score">0</span> /
+      出題数: <span id="total">0</span><br />
+      正答率: <span id="accuracy">0</span>%
+    </div>
+  </div>
+  <script src="quiz.js"></script>
+</body>
+</html>
